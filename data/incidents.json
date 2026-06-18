@@ -1,0 +1,229 @@
+[
+  {
+    "id": "incident-1777281438213-8385",
+    "createdAt": "2026-04-27T09:17:18.213Z",
+    "observerId": "observer-command",
+    "notes": "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement",
+    "uploads": [
+      {
+        "originalName": "Screenshot from 2026-04-27 14-47-00.png",
+        "storagePath": "/home/abhinav.sharma/Documents/detect.com/server/uploads/64414bed9b69018abdaf52f7c4f65a11",
+        "mimeType": "image/png",
+        "size": 324869,
+        "capturedAt": "2026-04-27T09:17:00.662Z",
+        "location": null,
+        "type": "photo",
+        "deviceId": "observer-command"
+      }
+    ],
+    "timeline": [
+      {
+        "originalName": "Screenshot from 2026-04-27 14-47-00.png",
+        "storagePath": "/home/abhinav.sharma/Documents/detect.com/server/uploads/64414bed9b69018abdaf52f7c4f65a11",
+        "mimeType": "image/png",
+        "size": 324869,
+        "capturedAt": "2026-04-27T09:17:00.662Z",
+        "location": null,
+        "type": "photo",
+        "deviceId": "observer-command",
+        "verified": false,
+        "temporalConfidence": 0.25,
+        "spatialConfidence": 0.25,
+        "alignmentScore": 0.25,
+        "confidence": 0.5875,
+        "syntheticRisk": 0.855,
+        "anomalyFlags": [
+          {
+            "code": "missing_location",
+            "severity": "low",
+            "label": "Missing capture location",
+            "detail": "No GPS coordinates were recovered from the media metadata."
+          },
+          {
+            "code": "alignment_outlier",
+            "severity": "high",
+            "label": "Alignment outlier",
+            "detail": "This file sits outside the strongest cross-observer timeline cluster."
+          }
+        ],
+        "forensicStatus": "high-risk"
+      }
+    ],
+    "observerSummary": [
+      {
+        "observerId": "observer-command",
+        "uploads": 1,
+        "mediaTypes": [
+          "photo"
+        ]
+      }
+    ],
+    "anomalies": [
+      {
+        "media": "Screenshot from 2026-04-27 14-47-00.png",
+        "observerId": "observer-command",
+        "capturedAt": "2026-04-27T09:17:00.662Z",
+        "code": "missing_location",
+        "severity": "low",
+        "label": "Missing capture location",
+        "detail": "No GPS coordinates were recovered from the media metadata."
+      },
+      {
+        "media": "Screenshot from 2026-04-27 14-47-00.png",
+        "observerId": "observer-command",
+        "capturedAt": "2026-04-27T09:17:00.662Z",
+        "code": "alignment_outlier",
+        "severity": "high",
+        "label": "Alignment outlier",
+        "detail": "This file sits outside the strongest cross-observer timeline cluster."
+      }
+    ],
+    "reconstructionSummary": {
+      "observerCount": 1,
+      "evidenceCount": 1,
+      "verifiedCount": 0,
+      "flaggedCount": 1,
+      "averageAlignment": 0.25,
+      "averageSyntheticRisk": 0.855,
+      "firstObservedAt": "2026-04-27T09:17:00.662Z",
+      "lastObservedAt": "2026-04-27T09:17:00.662Z",
+      "alignmentMethod": "Metadata correlation with OpenCV-ready hook points",
+      "recommendedNextStep": "Escalate to analyst review and compare waveform/frame signatures."
+    },
+    "verifiedTruth": [],
+    "intelligenceReports": [
+      {
+        "id": "intel-1777281510039-2691",
+        "createdAt": "2026-04-27T09:18:30.039Z",
+        "description": "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement",
+        "analysis": {
+          "headline": "Possible corroborating reports for photo incident",
+          "summary": "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement",
+          "incidentType": "photo",
+          "locationHint": "Unknown location",
+          "entities": [
+            "Israel-Iran",
+            "LIVE",
+            "Iran",
+            "Strait",
+            "Hormuz"
+          ],
+          "searchQueries": [
+            "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen Unknown location",
+            "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen witness report",
+            "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen news",
+            "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen social media video"
+          ],
+          "corroborationQuestions": [
+            "Do local news or public incident logs describe the same time window?",
+            "Are there matching witness videos or photos from nearby observers?",
+            "Do article timestamps and location references align with the uploaded metadata?"
+          ],
+          "confidence": 0.44,
+          "rationale": "Fallback analysis generated from incident notes, description text, and file metadata."
+        },
+        "results": [
+          {
+            "provider": "manual",
+            "title": "Manual web search recommended: Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen Unknown location",
+            "url": null,
+            "snippet": "Configure a search provider key to fetch live corroborating reports automatically.",
+            "source": "Local fallback",
+            "publishedAt": null,
+            "relevanceScore": 0.55
+          },
+          {
+            "provider": "manual",
+            "title": "Manual web search recommended: Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen witness report",
+            "url": null,
+            "snippet": "Configure a search provider key to fetch live corroborating reports automatically.",
+            "source": "Local fallback",
+            "publishedAt": null,
+            "relevanceScore": 0.5
+          },
+          {
+            "provider": "manual",
+            "title": "Manual web search recommended: Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen news",
+            "url": null,
+            "snippet": "Configure a search provider key to fetch live corroborating reports automatically.",
+            "source": "Local fallback",
+            "publishedAt": null,
+            "relevanceScore": 0.45000000000000007
+          }
+        ],
+        "summary": "Top corroborating lead: Manual web search recommended: Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen Unknown location. Only a limited number of results show meaningful overlap with the uploaded evidence. Review source timestamps, geography, and whether witness details genuinely match before treating these as confirmation.",
+        "providerStatus": {
+          "ai": "not_configured",
+          "search": "fallback"
+        },
+        "warnings": []
+      }
+    ],
+    "latestIntelligenceReport": {
+      "id": "intel-1777281510039-2691",
+      "createdAt": "2026-04-27T09:18:30.039Z",
+      "description": "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement",
+      "analysis": {
+        "headline": "Possible corroborating reports for photo incident",
+        "summary": "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement",
+        "incidentType": "photo",
+        "locationHint": "Unknown location",
+        "entities": [
+          "Israel-Iran",
+          "LIVE",
+          "Iran",
+          "Strait",
+          "Hormuz"
+        ],
+        "searchQueries": [
+          "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen Unknown location",
+          "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen witness report",
+          "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen news",
+          "Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen social media video"
+        ],
+        "corroborationQuestions": [
+          "Do local news or public incident logs describe the same time window?",
+          "Are there matching witness videos or photos from nearby observers?",
+          "Do article timestamps and location references align with the uploaded metadata?"
+        ],
+        "confidence": 0.44,
+        "rationale": "Fallback analysis generated from incident notes, description text, and file metadata."
+      },
+      "results": [
+        {
+          "provider": "manual",
+          "title": "Manual web search recommended: Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen Unknown location",
+          "url": null,
+          "snippet": "Configure a search provider key to fetch live corroborating reports automatically.",
+          "source": "Local fallback",
+          "publishedAt": null,
+          "relevanceScore": 0.55
+        },
+        {
+          "provider": "manual",
+          "title": "Manual web search recommended: Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen witness report",
+          "url": null,
+          "snippet": "Configure a search provider key to fetch live corroborating reports automatically.",
+          "source": "Local fallback",
+          "publishedAt": null,
+          "relevanceScore": 0.5
+        },
+        {
+          "provider": "manual",
+          "title": "Manual web search recommended: Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen news",
+          "url": null,
+          "snippet": "Configure a search provider key to fetch live corroborating reports automatically.",
+          "source": "Local fallback",
+          "publishedAt": null,
+          "relevanceScore": 0.45000000000000007
+        }
+      ],
+      "summary": "Top corroborating lead: Manual web search recommended: Israel-Iran LIVE: Iran proposes to reopen Strait of Hormuz without nuclear agreement Israel-Iran LIVE: Iran proposes to reopen Unknown location. Only a limited number of results show meaningful overlap with the uploaded evidence. Review source timestamps, geography, and whether witness details genuinely match before treating these as confirmation.",
+      "providerStatus": {
+        "ai": "not_configured",
+        "search": "fallback"
+      },
+      "warnings": []
+    }
+  }
+]
