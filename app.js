@@ -18,6 +18,7 @@ const defaultAllowedOrigins = [
   'http://127.0.0.1:5173',
   'https://detect.deployhub.in',
   'https://detect-com-backend-y3n5.vercel.app',
+  'https://detect-com-backend-ze9r.vercel.app',
 ];
 
 const allowedOrigins = getArrayEnv('CORS_ORIGIN', defaultAllowedOrigins);
