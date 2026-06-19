@@ -17,8 +17,8 @@ const defaultAllowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'https://detect.deployhub.in',
-  'https://detect-com-backend-y3n5.vercel.app',
-  'https://detect-com-backend-ze9r.vercel.app',
+  'https://detect-com.vercel.app',
+  'https://detect-9ric6ahwe-sharma21072003-1173s-projects.vercel.app',
 ];
 
 const allowedOrigins = getArrayEnv('CORS_ORIGIN', defaultAllowedOrigins);
@@ -72,17 +72,38 @@ app.use(async (req, res, next) => {
   }
 });
 
+/* ---------------- CORS CONFIG ---------------- */
+
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowAllOrigins || allowedOrigins.includes(origin)) {
+      // Allow requests without origin (Postman, server-to-server)
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      // Allow configured origins
+      if (allowAllOrigins || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      // Allow all Vercel preview deployments
+      if (origin.endsWith('.vercel.app')) {
         return callback(null, true);
       }
 
       return callback(new Error('Origin is not allowed by CORS.'));
     },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
+
+// Handle preflight requests
+app.options('*', cors());
+
+/* --------------------------------------------- */
 
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true, limit: '1mb' }));
@@ -104,6 +125,7 @@ app.use((error, req, res, next) => {
   if (error?.message === 'Origin is not allowed by CORS.') {
     return res.status(403).json({
       error: 'Origin is not allowed.',
+      origin: req.headers.origin,
     });
   }
 
@@ -115,6 +137,7 @@ app.use((error, req, res, next) => {
 
   if (error) {
     console.error('Unhandled server error:', error);
+
     return res.status(500).json({
       error: 'Internal server error.',
     });
