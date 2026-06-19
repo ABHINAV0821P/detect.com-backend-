@@ -15,8 +15,8 @@ const app = express();
 const defaultAllowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
-  'https://detect.deployhub.in'
-  'http://detect-com-backend-ze9r.vercel.app/',
+  'https://detect.deployhub.in',
+  'https://detect-com-backend-y3n5.vercel.app',
 ];
 const allowedOrigins = getArrayEnv('CORS_ORIGIN', defaultAllowedOrigins);
 const allowAllOrigins = allowedOrigins.length === 0;
