@@ -12,14 +12,17 @@ const usersRoute = require('./routes/users');
 loadEnvFile();
 
 const app = express();
+
 const defaultAllowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'https://detect.deployhub.in',
   'https://detect-com-backend-y3n5.vercel.app',
 ];
+
 const allowedOrigins = getArrayEnv('CORS_ORIGIN', defaultAllowedOrigins);
 const allowAllOrigins = allowedOrigins.length === 0;
+
 let databaseReadyPromise = null;
 
 function ensureDatabaseConnection() {
@@ -61,19 +64,25 @@ app.use(async (req, res, next) => {
     next();
   } catch (error) {
     console.error('Failed to connect to database:', error.message);
-    res.status(503).json({ error: 'Database connection failed.', details: error.message });
+    res.status(503).json({
+      error: 'Database connection failed.',
+      details: error.message,
+    });
   }
 });
 
-app.use(cors({
-  origin(origin, callback) {
-    if (!origin || allowAllOrigins || allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (!origin || allowAllOrigins || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
 
-    return callback(new Error('Origin is not allowed by CORS.'));
-  },
-}));
+      return callback(new Error('Origin is not allowed by CORS.'));
+    },
+  })
+);
+
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true, limit: '1mb' }));
 
@@ -86,20 +95,28 @@ app.use('/api/incidents', incidentRoute);
 
 app.use((error, req, res, next) => {
   if (error?.type === 'entity.too.large') {
-    return res.status(413).json({ error: 'Request payload is too large.' });
+    return res.status(413).json({
+      error: 'Request payload is too large.',
+    });
   }
 
   if (error?.message === 'Origin is not allowed by CORS.') {
-    return res.status(403).json({ error: 'Origin is not allowed.' });
+    return res.status(403).json({
+      error: 'Origin is not allowed.',
+    });
   }
 
   if (error?.name === 'MulterError') {
-    return res.status(400).json({ error: error.message });
+    return res.status(400).json({
+      error: error.message,
+    });
   }
 
   if (error) {
     console.error('Unhandled server error:', error);
-    return res.status(500).json({ error: 'Internal server error.' });
+    return res.status(500).json({
+      error: 'Internal server error.',
+    });
   }
 
   return next();
