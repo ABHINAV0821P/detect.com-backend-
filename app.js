@@ -13,6 +13,14 @@ loadEnvFile();
 
 const app = express();
 
+app.use(cors({
+  origin: true,
+  credentials: true,
+}));
+
+app.options('*', cors());
+
+
 const defaultAllowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
@@ -74,31 +82,34 @@ app.use(async (req, res, next) => {
 
 /* ---------------- CORS CONFIG ---------------- */
 
-app.use(
-  cors({
-    origin(origin, callback) {
-      // Allow requests without origin (Postman, server-to-server)
-      if (!origin) {
-        return callback(null, true);
-      }
+// app.use(
+//   cors({
+//     origin(origin, callback) {
+//       // Allow requests without origin (Postman, server-to-server)
+//       if (!origin) {
+//         return callback(null, true);
+//       }
 
-      // Allow configured origins
-      if (allowAllOrigins || allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
+//       // Allow configured origins
+//       if (allowAllOrigins || allowedOrigins.includes(origin)) {
+//         return callback(null, true);
+//       }
 
-      // Allow all Vercel preview deployments
-      if (origin.endsWith('.vercel.app')) {
-        return callback(null, true);
-      }
+//       // Allow all Vercel preview deployments
+//       if (origin.endsWith('.vercel.app')) {
+//         return callback(null, true);
+//       }
 
-      return callback(new Error('Origin is not allowed by CORS.'));
-    },
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-  })
-);
+//       return callback(new Error('Origin is not allowed by CORS.'));
+//     },
+//     credentials: true,
+//     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+//     allowedHeaders: ['Content-Type', 'Authorization'],
+//   })
+// );
+app.use(cors());
+
+app.options('*', cors());
 
 // Handle preflight requests
 app.options('*', cors());
